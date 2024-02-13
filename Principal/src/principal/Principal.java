@@ -67,6 +67,20 @@ public class Principal extends JFrame {
             }
         });
         
+       NuevoItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {    
+             JPanel Panel = new JPanel(new BorderLayout());
+            Panel.setBounds(15, 30, 500, 400);
+            JTabbedPane TabbedPane = new JTabbedPane();
+            JPanel Panel2 = new JPanel(new BorderLayout());
+            TextArea TA2 = new TextArea();
+            JScrollPane SP2 = new JScrollPane(TA2);
+            Panel2.add(SP2);
+            TabbedPane.addTab("Pestaña 2", Panel2);
+            }
+        });
+        
     //**********************LABELS***************************
     
     JLabel LEntrada = new JLabel("Entrada");
