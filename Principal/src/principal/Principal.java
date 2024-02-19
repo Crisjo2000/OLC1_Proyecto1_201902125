@@ -67,6 +67,7 @@ public class Principal extends JFrame {
             }
         });
         
+        //probando el git
        NuevoItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {    
