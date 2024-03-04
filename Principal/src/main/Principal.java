@@ -1,4 +1,4 @@
-package principal;
+package main;
 /**
  *
  * @author Christian
@@ -67,7 +67,6 @@ public class Principal extends JFrame {
             }
         });
         
-        //probando el git
        NuevoItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {    
@@ -141,9 +140,11 @@ public class Principal extends JFrame {
     getContentPane().add(PanelText);
     
     }
+    /*
     public static void main(String[] args) {
         Principal principal = new Principal();
         principal.setVisible(true);
     }
+    */
     
 }
