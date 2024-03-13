@@ -13,19 +13,22 @@ public class main {
     //Principal principal = new Principal();
     //principal.setVisible(true);
     String entrada = """
-                    10
-                     15
-                     25
+                    PROGRAM
+                     52.9
+                     suma_total
+                     "HOLA MUNDO"
+                     var:double:: notaAprobar <- 61 end;
+                     var:char[]:: labelAprobar <- "Nota Minima" end;
+                     arr:double:: @notas <- [notaAprobar, MUL(75, 0.45), DIV(SUM(80,20), RES(75,25))] end;
+                    arr:char[]:: @labels <- [labelAprobar, "P1", "P2"] end;
+                     console::print = "Media", "Mediana", "Moda", "Varianza", "Max", "Min" end;
+                     console::column = "test" -> [10, 15.5, 61.1] end;
+                     END PROGRAM;
                     """;
     // Generar Analizadores
     //analizadores("src/Compilador/", "lexer.jflex", "parser.cup");
-    // Analizar
+    //Analizar
     analizar(entrada);
-    
-        for (int i = 0; i < func.funciones.lista.size(); i++) {
-            System.out.println(func.funciones.lista.get(i));
-        }
-    
     
     }
     public static void analizadores(String ruta, String jflexFile, String cupFile){

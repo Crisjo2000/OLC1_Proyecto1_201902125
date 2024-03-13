@@ -8,13 +8,89 @@ package Compilador;
 /** CUP generated class containing symbol constants. */
 public class sym {
   /* terminals */
-  public static final int error = 1;
+  public static final int CHAR = 21;
+  public static final int RES = 10;
+  public static final int DOUBLE = 2;
+  public static final int MAYORQUE = 38;
+  public static final int IGUAL = 36;
+  public static final int DOUB = 22;
+  public static final int CORDER = 28;
+  public static final int COLUMN = 24;
+  public static final int ARROBA = 35;
+  public static final int DOSPD = 30;
+  public static final int DIV = 12;
+  public static final int MIN = 19;
+  public static final int ID = 4;
+  public static final int EXCL = 39;
+  public static final int MEDIANA = 15;
   public static final int EOF = 0;
-  public static final int ENTERO = 2;
+  public static final int PARIZQ = 25;
+  public static final int error = 1;
+  public static final int PROGRAM = 6;
+  public static final int MUL = 11;
+  public static final int COMA = 31;
+  public static final int CADENA = 3;
+  public static final int MODA = 16;
+  public static final int MOD = 13;
+  public static final int MENORQUE = 37;
+  public static final int FLECHA = 33;
+  public static final int FLECHAD = 34;
+  public static final int VARIANZA = 17;
+  public static final int DOSP = 29;
+  public static final int END = 7;
+  public static final int SUM = 9;
+  public static final int ARR = 8;
+  public static final int MEDIA = 14;
+  public static final int PARDER = 26;
+  public static final int SALTO = 40;
+  public static final int CORIZQ = 27;
+  public static final int MAX = 18;
+  public static final int VAR = 5;
+  public static final int PRINT = 23;
+  public static final int CONSOLE = 20;
+  public static final int PYC = 32;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
-  "ENTERO"
+  "DOUBLE",
+  "CADENA",
+  "ID",
+  "VAR",
+  "PROGRAM",
+  "END",
+  "ARR",
+  "SUM",
+  "RES",
+  "MUL",
+  "DIV",
+  "MOD",
+  "MEDIA",
+  "MEDIANA",
+  "MODA",
+  "VARIANZA",
+  "MAX",
+  "MIN",
+  "CONSOLE",
+  "CHAR",
+  "DOUB",
+  "PRINT",
+  "COLUMN",
+  "PARIZQ",
+  "PARDER",
+  "CORIZQ",
+  "CORDER",
+  "DOSP",
+  "DOSPD",
+  "COMA",
+  "PYC",
+  "FLECHA",
+  "FLECHAD",
+  "ARROBA",
+  "IGUAL",
+  "MENORQUE",
+  "MAYORQUE",
+  "EXCL",
+  "SALTO"
   };
 }
 

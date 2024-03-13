@@ -30,12 +30,17 @@ action code
 
 
 //------> Declaración de terminales
-terminal String ENTERO;
+terminal String DOUBLE, CADENA, ID;
+terminal String VAR, PROGRAM, END, ARR, SUM, RES, MUL, DIV, MOD, MEDIA, MEDIANA, MODA, VARIANZA, MAX, MIN, CONSOLE, CHAR, DOUB, PRINT, COLUMN;
+terminal String PARIZQ, PARDER, CORIZQ, CORDER, DOSP, DOSPD, COMA, PYC, FLECHA, FLECHAD, ARROBA, IGUAL, MENORQUE, MAYORQUE, EXCL, SALTO;
 
 
 //------> Declaración de no terminales
 non terminal inicio;
-non terminal lista, expre;
+non terminal codigo, lista_instruccion, lista_expresion;
+non terminal comentarios, simples, multilineas;
+non terminal instruccion, expresion, variable, print, arreglos, tipo, arrays, column;
+
 
 
 //------> Definir Simbolo Inicial
@@ -44,12 +49,52 @@ start with inicio;
 
 // ------------>  Producciones  <------------
 
-inicio ::= lista
+inicio ::= PROGRAM codigo END PROGRAM PYC
 ;
 
-lista ::= lista expre
-    | expre
+codigo ::= lista_instruccion
 ;
 
-expre ::= ENTERO:val        {:System.out.println(val.toString()); :}
+lista_instruccion ::= lista_instruccion instruccion
+    | instruccion
+;
+
+instruccion ::= variable
+    | print
+    | column
+    | arreglos
+    | expresion
+    | error PYC
+;
+
+variable ::= VAR DOSP tipo DOSPD expresion:val1 FLECHA expresion:val2 END PYC   
+;
+
+arreglos ::= ARR DOSP tipo DOSPD ARROBA expresion:val FLECHA CORIZQ arrays CORDER END PYC
+;
+
+tipo ::= CHAR
+    | DOUB
+;
+
+print ::= CONSOLE DOSPD PRINT IGUAL arrays:val END PYC
+;
+
+column ::= CONSOLE DOSPD COLUMN IGUAL expresion FLECHAD arrays END PYC
+;
+
+arrays ::= arrays COMA expresion:val
+    | expresion:val
+    | CORIZQ arrays CORDER
+;
+
+expresion ::=   DOUBLE:val          {: RESULT = val.toString(); System.out.println(val);  :}
+        |       CADENA:val          {: RESULT = val.toString(); System.out.println(val); :}
+        |       ID:val              {: RESULT = val.toString(); System.out.println(val); :}
+        |       SUM PARIZQ expresion:izq COMA expresion:der PARDER  {: RESULT = util.Expresion.suma(izq.toString(), der.toString()); :}
+        |       RES PARIZQ expresion:izq COMA expresion:der PARDER  {: RESULT = util.Expresion.resta(izq.toString(), der.toString()); :}
+        |       MUL PARIZQ expresion:izq COMA expresion:der PARDER  {: RESULT = util.Expresion.multiplicacion(izq.toString(), der.toString()); :}
+        |       DIV PARIZQ expresion:izq COMA expresion:der PARDER  {: RESULT = util.Expresion.division(izq.toString(), der.toString()); :}
+        |       MOD PARIZQ expresion:izq COMA expresion:der PARDER  {: RESULT = util.Expresion.modulo(izq.toString(), der.toString()); :}
+
 ;
